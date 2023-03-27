@@ -27,7 +27,6 @@
     align-items: center;
     background: #ecf3f2;
   }
-
   
   @font-face {
     font-family: 'Pixel';
@@ -39,6 +38,10 @@
     color: #009688;
     padding: 10px;
     font-family: 'Pixel';
+  }
+
+  .ts-header {
+    white-space: pre-wrap;
   }
 
   .memory-game {
