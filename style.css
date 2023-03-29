@@ -27,6 +27,7 @@
     align-items: center;
     background: #ecf3f2;
   }
+
   
   @font-face {
     font-family: 'Pixel';
@@ -40,12 +41,12 @@
     font-family: 'Pixel';
   }
 
-  .ts-header {
-    white-space: pre-wrap;
+  .div{
+    margin: 5px;
   }
 
-  .memory-game {
-    max-width: 100%;
+  .memory-game-difficulty{
+    max-width: 1650px;
     height: auto;
     margin: 10px;
     display: -webkit-box;
@@ -57,13 +58,43 @@
     align-content: center;
     -webkit-perspective: 1000px;
     perspective: 1000px;
-    margin-top: 0;
+  }
+
+  .memory-game-normal{
+    max-width: 1120px;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;    
+    align-content: center;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+
+  }
+
+  .memory-game-easy{
+    max-width: 640px;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;    
+    align-content: center;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
   }
   
   .memory-card {
     width: calc(150px);
     height: calc(150px);
     margin: 5px;
+    margin-bottom: 10px;
+    margin-top: 0;
     position: relative;
     -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
@@ -111,7 +142,6 @@
   .back-face {
     max-width: 100%;
     height: auto;
-    /* padding: 10px; */
     position: absolute;
     border-radius: 5px;
     background: #2e97e89d;
