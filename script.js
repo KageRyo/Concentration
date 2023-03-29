@@ -22,10 +22,13 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  const firstCardAlt = firstCard.querySelector('.front-face').alt;
+  const secondCardAlt = secondCard.querySelector('.front-face').alt;
+  let isMatch = firstCardAlt === secondCardAlt;
 
   isMatch ? disableCards() : unflipCards();
 }
+
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
@@ -42,7 +45,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 500);
 }
 
 function resetBoard() {
@@ -52,7 +55,7 @@ function resetBoard() {
 
 (function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
+    let randomPos = Math.floor(Math.random() * 20);
     card.style.order = randomPos;
   });
 })();
