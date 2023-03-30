@@ -17,9 +17,9 @@ Concentration - Memory Card Game.
 ## 貢獻指南
 
 1. Fork本專案
-2. 創建您的功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 將您的分支推送到遠程分支 (`git push origin feature/AmazingFeature`)
+2. 創建您的功能分支
+3. 提交您的更改
+4. 將您的分支推送到遠程分支
 5. 打開Pull Request
 
 ## 問題和建議
