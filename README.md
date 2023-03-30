@@ -25,7 +25,13 @@ Concentration - Memory Card Game.
 ## 問題和建議
 
 如果您遇到任何問題或有任何建議，請在GitHub上提交issue，我們會盡快回應。
+  
+## 參考資源
 
+我們參考了以下的資源，以實現這個遊戲：
+
+- [Memory Game](https://github.com/askiebaby/memory-game) - 這是一個基於HTML、CSS和JavaScript的簡單記憶力翻牌小遊戲，我們參考了它的遊戲邏輯和界面設計。
+       
 ## License
 
 本專案採用MIT License，請查看`LICENSE`文件以獲得更多詳情。
