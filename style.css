@@ -127,7 +127,12 @@
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  
+
+  .hide {
+    -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.3s both;
+	        animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.3s both;
+  }
+   
   .front-face{
     max-width: 100%;
     height: auto;
@@ -153,3 +158,30 @@
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
+
+  @-webkit-keyframes scale-out-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+  }
+  @keyframes scale-out-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+  }
+  
+  
