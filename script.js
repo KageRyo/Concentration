@@ -1,4 +1,5 @@
-const cards = document.querySelectorAll('.memory-card');
+const cards = document.querySelectorAll('.show');
+const flip = document.querySelectorAll('.memory-card');
 
 // 初始設定
 let hasFlippedCard = false;
@@ -33,6 +34,8 @@ function checkForMatch() {
 
 function disableCards() {
   // 匹配成功，移除點擊事件
+  firstCard.closest('.show').classList="hide";
+  secondCard.closest('.show').classList="hide";
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   resetBoard();
@@ -65,4 +68,4 @@ function resetBoard() {
 })();
 
 // 為每張卡片添加點擊事件
-cards.forEach(card => card.addEventListener('click', flipCard));
+flip.forEach(card => card.addEventListener('click', flipCard));
