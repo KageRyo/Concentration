@@ -1,5 +1,3 @@
-// 卡片
-const cards = document.querySelectorAll('.show');
 // 翻牌
 const flip = document.querySelectorAll('.memory-card');
 // 難易度
@@ -41,8 +39,6 @@ function disableCards() {
   // 匹配成功，移除點擊事件
   firstCard.closest('.show').classList="hide";
   secondCard.closest('.show').classList="hide";
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
   resetBoard();
 }
 
@@ -57,41 +53,41 @@ function unflipCards() {
   }, 500);
 }
 
+function resetCard(){
+  try{
+    for(let i=0;i<40;i++){
+      document.querySelector(".hide").classList="none";
+    }}catch{}finally{
+      try{for(let i=0;i<40;i++){
+        document.querySelector(".show").classList="none";
+      }}catch{}finally{
+        try{for(let i=0;i<40;i++){
+          document.querySelector(".memory-card.flip").classList="memory-card";
+        }}catch{}finally{
+            for(let i=0;i<cardNum;i++){
+            document.querySelector(".none").classList="show";}
+          }
+        }
+      }
+}
+
 function difficultyChoose() {
   // 難易度選擇
   if(this.id === 'easy') {
     document.querySelector("#difficulty").classList="memory-game-easy";
-    cardNum = 8;
-    try{
-    for(let i=0;i<40;i++){
-      document.querySelector(".show").classList="none";
-    }}catch{}finally{
-    for(let i=0;i<(cardNum*2);i++){
-      document.querySelector(".none").classList="show";
-    }
-    shuffle();}
+    cardNum = 16;
+    resetCard();
+    shuffle();
   } else if(this.id === 'normal') {
     document.querySelector("#difficulty").classList="memory-game-normal";
-    cardNum = 14;
-    try{
-      for(let i=0;i<40;i++){
-        document.querySelector(".show").classList="none";
-      }}catch{}finally{
-      for(let i=0;i<(cardNum*2);i++){
-        document.querySelector(".none").classList="show";
-      }
-      shuffle();}
+    cardNum = 28;
+    resetCard();
+    shuffle();
   } else if(this.id === 'hard') {
     document.querySelector("#difficulty").classList="memory-game-hard";
-    cardNum = 20;
-    try{
-      for(let i=0;i<=40;i++){
-        document.querySelector(".show").classList="none";
-      }}catch{}finally{
-      for(let i=0;i<(cardNum*2);i++){
-        document.querySelector(".none").classList="show";
-      }
-      shuffle();}
+    cardNum = 40;
+    resetCard();
+    shuffle();
   }
 }
 function resetBoard() {
@@ -101,6 +97,8 @@ function resetBoard() {
 }
 
 function shuffle() {
+  // 卡片
+  const cards = document.querySelectorAll('.show');
   // 洗牌
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * cardNum);
