@@ -114,3 +114,5 @@ flip.forEach(card => card.addEventListener('click', flipCard));
 easy.addEventListener('click', difficultyChoose);
 normal.addEventListener('click', difficultyChoose);
 hard.addEventListener('click', difficultyChoose);
+
+shuffle();
