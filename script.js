@@ -3,15 +3,16 @@ const cards = document.querySelectorAll('.show');
 // 翻牌
 const flip = document.querySelectorAll('.memory-card');
 // 難易度
-const easy = document.querySelectorAll('#easy');
-const normal = document.querySelectorAll('#normal');
-const hard = document.querySelectorAll('#hard');
+const easy = document.getElementById('easy');
+const normal = document.getElementById('normal');
+const hard = document.getElementById('hard');
+
 
 // 初始設定
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let difficulty = normal;
+let cardNum = 14;
 
 function flipCard() {
   if (lockBoard) return;
@@ -58,27 +59,39 @@ function unflipCards() {
 
 function difficultyChoose() {
   // 難易度選擇
-  console.log("蛤");
-
+  console.log('我有聽到哦');
+  if(this.id === 'easy') {
+    document.querySelector("#difficulty").classList="memory-game-easy";
+    cardNum = 8;
+    shuffle('easy');
+  } else if(this.id === 'normal') {
+    document.querySelector("#difficulty").classList="memory-game-normal";
+    cardNum = 14;
+    shuffle('normal');
+  } else if(this.id === 'hard') {
+    document.querySelector("#difficulty").classList="memory-game-hard";
+    cardNum = 20;
+    shuffle('hard');
+  }
 }
-
 function resetBoard() {
-  // 重置遊戲變數
+  // 重置遊戲變數s
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
+(function shuffle(difficulty) {
   // 洗牌
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 20);
+    let randomPos = Math.floor(Math.random() * cardNum);
     card.style.order = randomPos;
+    for(let i;randomPos>i;i++) {
   });
 })();
 
 // 為每張卡片添加點擊事件
 flip.forEach(card => card.addEventListener('click', flipCard));
 // 難易度的點擊事件
-easy.forEach(easy => easy.addEventListener('click', difficultyChoose));
-normal.forEach(normal => normal.addEventListener('click', difficultyChoose));
-hard.forEach(hard => hard.addEventListener('click', difficultyChoose));
+easy.addEventListener('click', difficultyChoose);
+normal.addEventListener('click', difficultyChoose);
+hard.addEventListener('click', difficultyChoose);
