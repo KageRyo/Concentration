@@ -5,12 +5,13 @@ const easy = document.getElementById('easy');
 const normal = document.getElementById('normal');
 const hard = document.getElementById('hard');
 
-
 // 初始設定
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let cardNum = 14;
+
+alert("歡迎遊玩，預設為普通模式。")
 
 function flipCard() {
   if (lockBoard) return;
@@ -74,22 +75,26 @@ function resetCard(){
 function difficultyChoose() {
   // 難易度選擇
   if(this.id === 'easy') {
+    alert("切換為簡單模式。");
     document.querySelector("#difficulty").classList="memory-game-easy";
     cardNum = 16;
     resetCard();
     shuffle();
   } else if(this.id === 'normal') {
+    alert("切換為普通模式。");
     document.querySelector("#difficulty").classList="memory-game-normal";
     cardNum = 28;
     resetCard();
     shuffle();
   } else if(this.id === 'hard') {
+    alert("切換為困難模式。");
     document.querySelector("#difficulty").classList="memory-game-hard";
     cardNum = 40;
     resetCard();
     shuffle();
   }
 }
+
 function resetBoard() {
   // 重置遊戲變數
   [hasFlippedCard, lockBoard] = [false, false];
