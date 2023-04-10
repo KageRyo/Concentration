@@ -59,35 +59,54 @@ function unflipCards() {
 
 function difficultyChoose() {
   // 難易度選擇
-  console.log('我有聽到哦');
   if(this.id === 'easy') {
     document.querySelector("#difficulty").classList="memory-game-easy";
     cardNum = 8;
-    shuffle('easy');
+    try{
+    for(let i=0;i<40;i++){
+      document.querySelector(".show").classList="none";
+    }}catch{}finally{
+    for(let i=0;i<(cardNum*2);i++){
+      document.querySelector(".none").classList="show";
+    }
+    shuffle();}
   } else if(this.id === 'normal') {
     document.querySelector("#difficulty").classList="memory-game-normal";
     cardNum = 14;
-    shuffle('normal');
+    try{
+      for(let i=0;i<40;i++){
+        document.querySelector(".show").classList="none";
+      }}catch{}finally{
+      for(let i=0;i<(cardNum*2);i++){
+        document.querySelector(".none").classList="show";
+      }
+      shuffle();}
   } else if(this.id === 'hard') {
     document.querySelector("#difficulty").classList="memory-game-hard";
     cardNum = 20;
-    shuffle('hard');
+    try{
+      for(let i=0;i<=40;i++){
+        document.querySelector(".show").classList="none";
+      }}catch{}finally{
+      for(let i=0;i<(cardNum*2);i++){
+        document.querySelector(".none").classList="show";
+      }
+      shuffle();}
   }
 }
 function resetBoard() {
-  // 重置遊戲變數s
+  // 重置遊戲變數
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle(difficulty) {
+function shuffle() {
   // 洗牌
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * cardNum);
     card.style.order = randomPos;
-    for(let i;randomPos>i;i++) {
   });
-})();
+}
 
 // 為每張卡片添加點擊事件
 flip.forEach(card => card.addEventListener('click', flipCard));
