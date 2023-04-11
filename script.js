@@ -63,6 +63,7 @@ function unflipCards() {
 }
 
 function resetCard(){
+  // 卡片重置
   const hide = document.querySelectorAll('.hide');
   hide.forEach(card => card.classList='none');
   const show = document.querySelectorAll('.show');
