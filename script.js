@@ -6,6 +6,8 @@ const normal = document.getElementById('normal');
 const hard = document.getElementById('hard');
 // 重置
 const reset = document.getElementById('reset');
+//偷看
+const look = document.getElementById('look');
 
 // 初始設定
 let hasFlippedCard = false;
@@ -13,6 +15,8 @@ let lockBoard = false;
 let firstCard, secondCard;
 let cardNum = 28;
 let gamemode=2;
+// 洗牌
+shuffle();
 alert("歡迎遊玩，預設為普通模式。")
 
 function flipCard() {
@@ -57,21 +61,14 @@ function unflipCards() {
 }
 
 function resetCard(){
-  try{
-    for(let i=0;i<40;i++){
-      document.querySelector(".hide").classList="none";
-    }}catch{}finally{
-      try{for(let i=0;i<40;i++){
-        document.querySelector(".show").classList="none";
-      }}catch{}finally{
-        try{for(let i=0;i<40;i++){
-          document.querySelector(".memory-card.flip").classList="memory-card";
-        }}catch{}finally{
-            for(let i=0;i<cardNum;i++){
-            document.querySelector(".none").classList="show";}
-          }
-        }
-      }
+  const hide = document.querySelectorAll('.hide');
+  hide.forEach(card => card.classList='none');
+  const show = document.querySelectorAll('.show');
+  show.forEach(card => card.classList='none');
+  const flip = document.querySelectorAll('.memory-card.flip');
+  flip.forEach(card => card.classList='memory-card');
+  for(let i=0;i<cardNum;i++){
+    document.querySelector(".none").classList="show";}
 }
 
 function difficultyChoose() {
@@ -112,6 +109,16 @@ function difficultyChoose() {
   }
 }
 
+function lookCard() {
+  const lookCardback=document.querySelectorAll(".memory-card");
+  lookCardback.forEach(card => card.classList.add('flip'));
+  setTimeout(() => {
+    const lookCardback=document.querySelectorAll(".memory-card");
+    lookCardback.forEach(card => card.classList.remove('flip'));
+  },1000);
+}
+
+
 function resetGame() {
   // 重置遊戲
   alert("重置遊戲。");
@@ -143,5 +150,5 @@ normal.addEventListener('click', difficultyChoose);
 hard.addEventListener('click', difficultyChoose);
 // 重置的點擊事件
 reset.addEventListener('click', resetGame);
-// 洗牌
-shuffle();
+// 偷看的點擊事件
+look.addEventListener('click', lookCard);
