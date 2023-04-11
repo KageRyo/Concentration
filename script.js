@@ -72,7 +72,9 @@ function resetCard(){
   flip.forEach(card => card.classList='memory-card');
   setTimeout(() => {
   for(let i=0;i<cardNum;i++){
-    document.querySelector(".none").classList="show";}},200);
+    document.querySelector(".none").classList="show";}},100);
+  setTimeout(() => {
+    shuffle();}, 100);
 }
 
 function difficultyChoose() {
@@ -83,7 +85,6 @@ function difficultyChoose() {
       document.querySelector("#difficulty").classList="memory-game-easy";
       cardNum = 16;
       resetCard();
-      shuffle();
       alert("切換為簡單模式。");
     }else{
       alert("已經是簡單模式了。");
@@ -94,7 +95,6 @@ function difficultyChoose() {
       document.querySelector("#difficulty").classList="memory-game-normal";
       cardNum = 28;
       resetCard();
-      shuffle();
       alert("切換為普通模式。");
     }else{
       alert("已經是普通模式了。");
@@ -105,7 +105,6 @@ function difficultyChoose() {
       document.querySelector("#difficulty").classList="memory-game-hard";
       cardNum = 40;
       resetCard();
-      shuffle();
       alert("切換為困難模式。");
     }else{
       alert("已經是困難模式了。");
