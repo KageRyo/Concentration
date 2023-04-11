@@ -6,6 +6,8 @@ const normal = document.getElementById('normal');
 const hard = document.getElementById('hard');
 // 重置
 const reset = document.getElementById('reset');
+//偷看
+const look = document.getElementById('look');
 
 // 初始設定
 let hasFlippedCard = false;
@@ -143,5 +145,7 @@ normal.addEventListener('click', difficultyChoose);
 hard.addEventListener('click', difficultyChoose);
 // 重置的點擊事件
 reset.addEventListener('click', resetGame);
+// 偷看的點擊事件
+look.addEventListener('click', lookCard);
 // 洗牌
 shuffle();
