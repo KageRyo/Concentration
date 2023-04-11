@@ -11,6 +11,7 @@ let lockBoard = false;
 let firstCard, secondCard;
 let cardNum = 14;
 
+let dc=2;
 alert("歡迎遊玩，預設為普通模式。")
 
 function flipCard() {
@@ -75,23 +76,38 @@ function resetCard(){
 function difficultyChoose() {
   // 難易度選擇
   if(this.id === 'easy') {
-    alert("切換為簡單模式。");
-    document.querySelector("#difficulty").classList="memory-game-easy";
-    cardNum = 16;
-    resetCard();
-    shuffle();
+    if(dc!=1){
+      dc=1;
+      alert("切換為簡單模式。");
+      document.querySelector("#difficulty").classList="memory-game-easy";
+      cardNum = 16;
+      resetCard();
+      shuffle();
+    }else{
+      alert("已經是簡單模式了。");
+    }
   } else if(this.id === 'normal') {
-    alert("切換為普通模式。");
-    document.querySelector("#difficulty").classList="memory-game-normal";
-    cardNum = 28;
-    resetCard();
-    shuffle();
+    if(dc!=2){
+      dc=2;
+      alert("切換為普通模式。");
+      document.querySelector("#difficulty").classList="memory-game-normal";
+      cardNum = 28;
+      resetCard();
+      shuffle();
+    }else{
+      alert("已經是普通模式了。");
+    }
   } else if(this.id === 'hard') {
-    alert("切換為困難模式。");
-    document.querySelector("#difficulty").classList="memory-game-hard";
-    cardNum = 40;
-    resetCard();
-    shuffle();
+    if(dc!=3){
+      dc=3;
+      alert("切換為困難模式。");
+      document.querySelector("#difficulty").classList="memory-game-hard";
+      cardNum = 40;
+      resetCard();
+      shuffle();
+    }else{
+      alert("已經是困難模式了。");
+    }
   }
 }
 
