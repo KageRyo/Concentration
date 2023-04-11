@@ -17,9 +17,10 @@ let cardNum = 28;
 let gamemode=2;
 // 洗牌
 shuffle();
-alert("歡迎遊玩，預設為普通模式。")
+alert("歡迎遊玩，預設為普通模式。");
 
 function flipCard() {
+  // 翻牌
   if (lockBoard) return;
   if (this === firstCard) return;
   this.classList.add('flip');
@@ -35,6 +36,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
+  // 檢查是否為同一張卡片
   const firstCardAlt = firstCard.querySelector('.front-face').alt;
   const secondCardAlt = secondCard.querySelector('.front-face').alt;
   // 檢查是否匹配
@@ -67,8 +69,9 @@ function resetCard(){
   show.forEach(card => card.classList='none');
   const flip = document.querySelectorAll('.memory-card.flip');
   flip.forEach(card => card.classList='memory-card');
+  setTimeout(() => {
   for(let i=0;i<cardNum;i++){
-    document.querySelector(".none").classList="show";}
+    document.querySelector(".none").classList="show";}},200);
 }
 
 function difficultyChoose() {
@@ -76,33 +79,33 @@ function difficultyChoose() {
   if(this.id === 'easy') {
     if(gamemode!=1){
       gamemode=1;
-      alert("切換為簡單模式。");
       document.querySelector("#difficulty").classList="memory-game-easy";
       cardNum = 16;
       resetCard();
       shuffle();
+      alert("切換為簡單模式。");
     }else{
       alert("已經是簡單模式了。");
     }
   } else if(this.id === 'normal') {
     if(gamemode!=2){
       gamemode=2;
-      alert("切換為普通模式。");
       document.querySelector("#difficulty").classList="memory-game-normal";
       cardNum = 28;
       resetCard();
       shuffle();
+      alert("切換為普通模式。");
     }else{
       alert("已經是普通模式了。");
     }
   } else if(this.id === 'hard') {
     if(gamemode!=3){
       gamemode=3;
-      alert("切換為困難模式。");
       document.querySelector("#difficulty").classList="memory-game-hard";
       cardNum = 40;
       resetCard();
       shuffle();
+      alert("切換為困難模式。");
     }else{
       alert("已經是困難模式了。");
     }
@@ -110,14 +113,18 @@ function difficultyChoose() {
 }
 
 function lookCard() {
+  // 偷看
+  lockBoard=true; //鎖定遊戲版面
+  hasFlippedCard=false; //重置第一次點擊
   const lookCardback=document.querySelectorAll(".memory-card");
   lookCardback.forEach(card => card.classList.add('flip'));
   setTimeout(() => {
     const lookCardback=document.querySelectorAll(".memory-card");
     lookCardback.forEach(card => card.classList.remove('flip'));
   },1000);
+  setTimeout(() => {lockBoard=false;},800);
+  
 }
-
 
 function resetGame() {
   // 重置遊戲
