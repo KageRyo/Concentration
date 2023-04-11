@@ -1,6 +1,6 @@
 # Concentration
-Concentration - Memory Card Game.  
-這是一個簡單的記憶力翻牌小遊戲。在這個遊戲中，我們使用了Hololive的角色作為卡片圖案，讓您在挑戰記憶力的同時欣賞可愛的角色！
+Concentration - Memory Card Game. **[[demo]](https://kageryo.github.io/Concentration/)**  
+這是一個簡單的記憶力翻牌小遊戲。在這個遊戲中，我們使用了Hololive的角色作為卡片圖案，讓您在挑戰記憶力的同時欣賞可愛的角色！  
 
 ## 遊戲玩法
 
