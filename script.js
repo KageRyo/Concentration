@@ -14,6 +14,7 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let cardNum = 28;
+let mathedCard = 0;
 let gamemode=2;
 // 洗牌
 shuffle();
@@ -48,7 +49,18 @@ function disableCards() {
   // 匹配成功後移除點擊事件
   firstCard.closest('.show').classList="hide";
   secondCard.closest('.show').classList="hide";
-  resetBoard();
+  // 檢查是否完成遊戲
+  mathedCard += 2;
+  if (mathedCard === cardNum) {
+    setTimeout(() => {
+      alert("破關成功！");
+      // 破關後重置遊戲
+      resetGame(); 
+    }, 500);
+  } else {
+    resetBoard();
+  }
+
 }
 
 function unflipCards() {
