@@ -9,6 +9,7 @@ const reset = document.getElementById('reset');
 // 偷看
 const look = document.getElementById('look');
 const end = document.querySelector("#end");
+const resetEndlook =document.querySelector("#reset_look");
 
 // 初始設定
 let hasFlippedCard = false;
@@ -16,10 +17,7 @@ let lockBoard = false;
 let firstCard, secondCard;
 let cardNum = 28;
 let mathedCard = 0;
-let gamemode=2;
-// 洗牌
-shuffle();
-alert("歡迎遊玩，預設為普通模式。");
+let gamemode=0;
 
 function flipCard() {
   // 翻牌
@@ -56,6 +54,7 @@ function disableCards() {
     setTimeout(() => {
       const hide = document.querySelectorAll('.hide');
       hide.forEach(card => card.classList='none');
+      end.innerHTML="已過關"
       end.classList="text"
       // 破關後重置遊戲
       // resetGame(); 
@@ -94,14 +93,16 @@ function resetCard(){
 }
 
 function difficultyChoose() {
+  if(gamemode===0){resetEndlook.classList="ts-wrap is-center-aligned";}
   // 難易度選擇
   if(this.id === 'easy') {
     if(gamemode!=1){
       gamemode=1;
       document.querySelector("#difficulty").classList="memory-game-easy";
       cardNum = 16;
+      mathedCard = 0;
       resetCard();
-      alert("切換為簡單模式。");
+      alert("切換為簡單模式。"); 
     }else{
       alert("已經是簡單模式了。");
     }
@@ -110,6 +111,7 @@ function difficultyChoose() {
       gamemode=2;
       document.querySelector("#difficulty").classList="memory-game-normal";
       cardNum = 28;
+      mathedCard = 0;
       resetCard();
       alert("切換為普通模式。");
     }else{
@@ -120,6 +122,7 @@ function difficultyChoose() {
       gamemode=3;
       document.querySelector("#difficulty").classList="memory-game-hard";
       cardNum = 40;
+      mathedCard = 0;
       resetCard();
       alert("切換為困難模式。");
     }else{
@@ -146,6 +149,7 @@ function lookCard() {
 function resetGame() {
   // 重置遊戲
   alert("重置遊戲。");
+  mathedCard = 0;
   resetCard();
   shuffle();
 }
