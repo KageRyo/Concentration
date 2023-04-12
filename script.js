@@ -6,7 +6,7 @@ const normal = document.getElementById('normal');
 const hard = document.getElementById('hard');
 // 重置
 const reset = document.getElementById('reset');
-//偷看
+// 偷看
 const look = document.getElementById('look');
 
 // 初始設定
@@ -45,7 +45,7 @@ function checkForMatch() {
 }
 
 function disableCards() {
-  // 匹配成功，移除點擊事件
+  // 匹配成功後移除點擊事件
   firstCard.closest('.show').classList="hide";
   secondCard.closest('.show').classList="hide";
   resetBoard();
@@ -113,17 +113,18 @@ function difficultyChoose() {
 }
 
 function lookCard() {
-  // 偷看
-  lockBoard=true; //鎖定遊戲版面
-  hasFlippedCard=false; //重置第一次點擊
+  // 鎖定遊戲版面
+  lockBoard=true;
+  hasFlippedCard=false;
+  // 重置第一次點擊
   const lookCardback=document.querySelectorAll(".memory-card");
+  // 偷看
   lookCardback.forEach(card => card.classList.add('flip'));
   setTimeout(() => {
     const lookCardback=document.querySelectorAll(".memory-card");
     lookCardback.forEach(card => card.classList.remove('flip'));
   },1000);
   setTimeout(() => {lockBoard=false;},800);
-  
 }
 
 function resetGame() {
