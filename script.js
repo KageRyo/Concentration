@@ -8,6 +8,7 @@ const hard = document.getElementById('hard');
 const reset = document.getElementById('reset');
 // 偷看
 const look = document.getElementById('look');
+const end = document.querySelector("#end");
 
 // 初始設定
 let hasFlippedCard = false;
@@ -53,9 +54,11 @@ function disableCards() {
   mathedCard += 2;
   if (mathedCard === cardNum) {
     setTimeout(() => {
-      alert("破關成功！");
+      const hide = document.querySelectorAll('.hide');
+      hide.forEach(card => card.classList='none');
+      end.classList="text"
       // 破關後重置遊戲
-      resetGame(); 
+      // resetGame(); 
     }, 500);
   } else {
     resetBoard();
@@ -76,6 +79,7 @@ function unflipCards() {
 
 function resetCard(){
   // 卡片重置
+  end.classList="none"
   const hide = document.querySelectorAll('.hide');
   hide.forEach(card => card.classList='none');
   const show = document.querySelectorAll('.show');
@@ -135,7 +139,7 @@ function lookCard() {
   setTimeout(() => {
     const lookCardback=document.querySelectorAll(".memory-card");
     lookCardback.forEach(card => card.classList.remove('flip'));
-  },1000);
+  },1200);
   setTimeout(() => {lockBoard=false;},800);
 }
 
