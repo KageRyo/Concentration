@@ -70,7 +70,6 @@ function disableCards() {
   } else {
     resetBoard();
   }
-
 }
 
 function unflipCards() {

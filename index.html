@@ -16,17 +16,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.3/tocas.min.js"></script>
     </head>
     <body>
-		<!--引入語系切換核心-->
-		<script src="./js/locale.js"></script>
-		<p align="center">
-			<b style="font-family: Pixel;" id="LocaleReq0"
-			data-lang-zh-tw="語言切換"
-			data-lang-ja="言語切り替え"
-			data-lang-en="Change Language">語言切換</b>
-			<button class="ts-button is-large" style="font-family: Pixel;" onclick="English_Locale();">English</button>
-			<button class="ts-button is-large" style="font-family: Pixel;" onclick="Chinese_Locale();">正體中文(臺灣)</button>
-			<button class="ts-button is-large" style="font-family: Pixel;" onclick="Japanese_Locale();">日本語</button>
-		</p>
         <!-- 標題 -->
         <div class="ts-header">
             <h1>
@@ -329,8 +318,15 @@
                 </div>
             </div>
         </div>
-
-        <!-- 引入 JavaScript -->
+        <!-- 引入語系切換核心 -->
+		<script src="./js/locale.js"></script>
+        <br>
+		<div class="ts-wrap is-center-aligned" style="font-family: Pixel;">
+			<button class="ts-button is-large" onclick="English_Locale();">English</button>
+			<button class="ts-button is-large" onclick="Chinese_Locale();">正體中文(臺灣)</button>
+			<button class="ts-button is-large" onclick="Japanese_Locale();">日本語</button>
+        </div>
+        <!-- 引入遊戲本體 JavaScript -->
         <script src="script.js"></script>
     </body>
 </html>
