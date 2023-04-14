@@ -201,6 +201,7 @@ function lookCard() {
   flip.forEach(card => card.removeEventListener('click', flipCard));
   // 重置第一次點擊
   const lookCardback = document.querySelectorAll(".memory-card");
+  firstCard = null;
   // 偷看
   lookCardback.forEach(card => card.classList.add('flip'));
   setTimeout(() => {
