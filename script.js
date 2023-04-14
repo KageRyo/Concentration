@@ -54,7 +54,15 @@ function disableCards() {
     setTimeout(() => {
       const hide = document.querySelectorAll('.hide');
       hide.forEach(card => card.classList='none');
-      end.innerHTML="已過關"
+		if (document.title=="記憶力翻牌小遊戲"){
+			end.innerHTML="已過關";
+		}
+		else if (document.title=="Memory Card Game"){
+			end.innerHTML="Finish";
+		}
+		else if (document.title=="メモリカードゲーム"){
+			end.innerHTML="ゲームクリア";
+		}
       end.classList="text"
       // 破關後重置遊戲
       // resetGame(); 
@@ -102,32 +110,85 @@ function difficultyChoose() {
       cardNum = 16;
       mathedCard = 0;
       resetCard();
-      alert("切換為簡單模式。"); 
-    }else{
-      alert("已經是簡單模式了。");
+		if (document.title=="記憶力翻牌小遊戲"){
+			alert("切換為簡單模式。");
+		}
+		else if (document.title=="Memory Card Game"){
+			alert("Switch to Easy Mode.");
+		}
+		else if (document.title=="メモリカードゲーム"){
+			alert("簡単モードに切り替え。");
+		}
     }
-  } else if(this.id === 'normal') {
+	else{
+		if (document.title=="記憶力翻牌小遊戲"){
+			alert("已經是簡單模式了。");
+		}
+		else if (document.title=="Memory Card Game"){
+			alert("It was Easy Mode.");
+		}
+		else if (document.title=="メモリカードゲーム"){
+			alert("簡単モードでした");
+		}
+	}
+  }
+  else if(this.id === 'normal') {
     if(gamemode!=2){
       gamemode=2;
       document.querySelector("#difficulty").classList="memory-game-normal";
       cardNum = 28;
       mathedCard = 0;
       resetCard();
-      alert("切換為普通模式。");
-    }else{
-      alert("已經是普通模式了。");
+		if (document.title=="記憶力翻牌小遊戲"){
+			alert("切換為普通模式。");
+		}
+		else if (document.title=="Memory Card Game"){
+			alert("Switch to Normal Mode.");
+		}
+		else if (document.title=="メモリカードゲーム"){
+			alert("普通モードに切り替え。");
+		}
     }
-  } else if(this.id === 'hard') {
+	else{
+		if (document.title=="記憶力翻牌小遊戲"){
+			alert("已經是普通模式了。");
+		}
+		else if (document.title=="Memory Card Game"){
+			alert("It was Normal Mode.");
+		}
+		else if (document.title=="メモリカードゲーム"){
+			alert("普通モードでした");
+		}
+	}
+  }
+  else if(this.id === 'hard') {
     if(gamemode!=3){
       gamemode=3;
       document.querySelector("#difficulty").classList="memory-game-hard";
       cardNum = 40;
       mathedCard = 0;
       resetCard();
-      alert("切換為困難模式。");
-    }else{
-      alert("已經是困難模式了。");
+		if (document.title=="記憶力翻牌小遊戲"){
+			alert("切換為困難模式。");
+		}
+		else if (document.title=="Memory Card Game"){
+			alert("Switch to Hard Mode.");
+		}
+		else if (document.title=="メモリカードゲーム"){
+			alert("困難モードに切り替え。");
+		}
     }
+	else{
+		if (document.title=="記憶力翻牌小遊戲"){
+			alert("已經是困難模式了。");
+		}
+		else if (document.title=="Memory Card Game"){
+			alert("It was Hard Mode.");
+		}
+		else if (document.title=="メモリカードゲーム"){
+			alert("困難モードでした");
+		}
+	}
   }
 }
 
@@ -148,7 +209,15 @@ function lookCard() {
 
 function resetGame() {
   // 重置遊戲
-  alert("重置遊戲。");
+	if (document.title=="記憶力翻牌小遊戲"){
+		alert("重置遊戲。");
+	}
+	else if (document.title=="Memory Card Game"){
+		alert("Game reset.");
+	}
+	else if (document.title=="メモリカードゲーム"){
+		alert("ゲームリセット。");
+	}
   mathedCard = 0;
   resetCard();
   shuffle();
