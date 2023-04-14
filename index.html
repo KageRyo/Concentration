@@ -16,16 +16,47 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.3/tocas.min.js"></script>
     </head>
     <body>
+		<!--引入語系切換核心-->
+		<script src="./js/locale.js"></script>
+		<p align="center">
+			<b style="font-family: Pixel;" id="LocaleReq0"
+			data-lang-zh-tw="語言切換"
+			data-lang-ja="言語切り替え"
+			data-lang-en="Change Language">語言切換</b>
+			<button class="ts-button is-large" style="font-family: Pixel;" onclick="English_Locale();">English</button>
+			<button class="ts-button is-large" style="font-family: Pixel;" onclick="Chinese_Locale();">正體中文(臺灣)</button>
+			<button class="ts-button is-large" style="font-family: Pixel;" onclick="Japanese_Locale();">日本語</button>
+		</p>
         <!-- 標題 -->
         <div class="ts-header">
-            <h1>記憶力翻牌小遊戲</h1>
+            <h1>
+				<div id="LocaleReq1"
+				data-lang-zh-tw="記憶力翻牌小遊戲"
+				data-lang-ja="メモリカードゲーム"
+				data-lang-en="Memory Card Game">記憶力翻牌小遊戲</div>
+			</h1>
         </div>
         <!-- 難度選擇-->
         <div class="ts-wrap is-center-aligned" style="font-family: Pixel;">
                 <div class="ts-wrap">
-                    <button class="ts-button is-large" id="easy">簡單</button>
-                    <button class="ts-button is-large" id="normal">普通</button>
-                    <button class="ts-button is-large" id="hard">困難</button>
+                    <button class="ts-button is-large" id="easy">
+						<div id="LocaleReq2"
+						data-lang-zh-tw="簡單"
+						data-lang-ja="簡単"
+						data-lang-en="EASY">簡單</div>
+					</button>
+                    <button class="ts-button is-large" id="normal">
+						<div id="LocaleReq3"
+						data-lang-zh-tw="普通"
+						data-lang-ja="普通"
+						data-lang-en="NORMAL">普通</div>
+					</button>
+                    <button class="ts-button is-large" id="hard">
+						<div id="LocaleReq4"
+						data-lang-zh-tw="困難"
+						data-lang-ja="困難"
+						data-lang-en="HARD">困難</div>
+					</button>
                 </div>
         </div>
         <!-- 卡片 -->
@@ -271,15 +302,30 @@
                         <img class="back-face" src="img/card.png" alt="Memory Card" />
                     </div>
                 </div>
-                <a class="text" id="end">選擇難度</a>
+                <a class="text" id="end">
+					<div id="LocaleReq5"
+					data-lang-zh-tw="選擇難度"
+					data-lang-ja="難易度選択"
+					data-lang-en="Difficulty Select">選擇難度</div>
+				</a>
             </section>
         </div>
         <!-- 重置和偷看 -->
         <div class="none" id="reset_look">
             <div class="ts-wrap" style="font-family: Pixel;">
-                <button class="ts-button is-large" id="reset">重置</button>
+                <button class="ts-button is-large" id="reset">
+					<div id="LocaleReq6"
+					data-lang-zh-tw="重置"
+					data-lang-ja="リセット"
+					data-lang-en="Reset">重置</div>
+				</button>
                 <div>
-                <button class="ts-button is-large" id="look">偷看</button>
+                <button class="ts-button is-large" id="look">
+					<div id="LocaleReq7"
+					data-lang-zh-tw="偷看"
+					data-lang-ja="覗う"
+					data-lang-en="Peep">偷看</div>
+				</button>
                 </div>
             </div>
         </div>
