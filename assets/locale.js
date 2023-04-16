@@ -1,6 +1,6 @@
-document.write('<script src="./js/jquery-3.6.1.js"></script>');
-document.write('<script src="./js/LocaleSwitch.js"></script>');
-document.write('<script src="../script.js"></script>');
+document.write('<script src="./assets/jquery-3.6.1.js"></script>');
+document.write('<script src="./assets/LocaleSwitch.js"></script>');
+document.write('<script src="./assets/script.js"></script>');
 function English_Locale(){
 	document.title="Memory Card Game";
 	for (var i=0;i<8;i++){

@@ -33,7 +33,7 @@
   @font-face {
     font-family: 'Pixel';
     src: local('Pixel'),
-      url('Cubic.ttf');
+      url('../fonts/Cubic.ttf');
   }
 
   h1 {
