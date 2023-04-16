@@ -52,10 +52,11 @@ function disableCards() {
   mathedCard += 2;
   if (mathedCard === cardNum) {
     setTimeout(() => {
+      end.addEventListener('click', resetGame);
       const hide = document.querySelectorAll('.hide');
       hide.forEach(card => card.classList = 'none');
       if (document.title == "記憶力翻牌小遊戲") {
-        end.innerHTML = "已過關";
+        end.innerHTML = "已通關";
       }
       else if (document.title == "Memory Card Game") {
         end.innerHTML = "Finish";
@@ -226,6 +227,7 @@ function resetGame() {
   else if (document.title == "メモリカードゲーム") {
     alert("ゲームリセット。");
   }
+  if(mathedCard === cardNum){end.removeEventListener('click', resetGame)}
   mathedCard = 0;
   resetCard();
   shuffle();
