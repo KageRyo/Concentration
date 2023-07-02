@@ -12,7 +12,7 @@ Concentration - Memory Card Game. **[[demo]](https://kageryo.github.io/Concentra
 
 ## 聲明
 
-本專案既開發者與Cover株式會社沒有關係，本作僅是使用其Hololive Product相關角色，並無任何商業行為。
+本專案既開發者與Cover株式會社沒有關係，本作僅是使用其Hololive Product相關角色，並無任何商業或收取贊助款的行為。
 
 ## 貢獻指南
 
