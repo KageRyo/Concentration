@@ -227,7 +227,7 @@ function resetGame() {
   else if (document.title == "メモリカードゲーム") {
     alert("ゲームリセット。");
   }
-  if(mathedCard === cardNum){end.removeEventListener('click', resetGame)}
+  if (mathedCard === cardNum) { end.removeEventListener('click', resetGame) }
   mathedCard = 0;
   resetCard();
   shuffle();

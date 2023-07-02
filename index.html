@@ -1,332 +1,316 @@
 <!DOCTYPE html>
 <html lang="zh_TW" class="html">
-    <head>
-        <!-- 網頁標題和語系 -->
-        <meta charset="UTF-8">
-        <title>記憶力翻牌小遊戲</title>
-        <link rel="icon" type="img/icon" href="img/icon.ico">
-        <!-- 引入 CSS -->
-        <link rel="stylesheet" href="assets/style.css">
-        <!-- 引入字型 -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
-        <!-- 套用 TocasUI -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.3/tocas.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.3/tocas.min.js"></script>
-    </head>
-    <body>
-        <!-- 標題 -->
-        <div class="ts-header">
-            <h1>
-				<div id="LocaleReq1"
-				data-lang-zh-tw="記憶力翻牌小遊戲"
-				data-lang-ja="メモリカードゲーム"
-				data-lang-en="Memory Card Game">記憶力翻牌小遊戲</div>
-			</h1>
+
+<head>
+    <!-- 網頁標題和語系 -->
+    <meta charset="UTF-8">
+    <title>記憶力翻牌小遊戲</title>
+    <link rel="icon" type="img/icon" href="img/icon.ico">
+    <!-- 引入 CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- 引入字型 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- 套用 TocasUI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.4/tocas.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas/4.2.4/tocas.min.js"></script>
+</head>
+
+<body>
+    <!-- 標題 -->
+    <div class="ts-header">
+        <h1>
+            <div id="LocaleReq1" data-lang-zh-tw="記憶力翻牌小遊戲" data-lang-ja="メモリカードゲーム" data-lang-en="Memory Card Game">
+                記憶力翻牌小遊戲</div>
+        </h1>
+    </div>
+    <!-- 難度選擇-->
+    <div class="ts-wrap is-center-aligned" style="font-family: Pixel;">
+        <div class="ts-wrap">
+            <button class="ts-button is-large" id="easy">
+                <div id="LocaleReq2" data-lang-zh-tw="簡單" data-lang-ja="簡単" data-lang-en="EASY">簡單</div>
+            </button>
+            <button class="ts-button is-large" id="normal">
+                <div id="LocaleReq3" data-lang-zh-tw="普通" data-lang-ja="普通" data-lang-en="NORMAL">普通</div>
+            </button>
+            <button class="ts-button is-large" id="hard">
+                <div id="LocaleReq4" data-lang-zh-tw="困難" data-lang-ja="困難" data-lang-en="HARD">困難</div>
+            </button>
         </div>
-        <!-- 難度選擇-->
-        <div class="ts-wrap is-center-aligned" style="font-family: Pixel;">
-                <div class="ts-wrap">
-                    <button class="ts-button is-large" id="easy">
-						<div id="LocaleReq2"
-						data-lang-zh-tw="簡單"
-						data-lang-ja="簡単"
-						data-lang-en="EASY">簡單</div>
-					</button>
-                    <button class="ts-button is-large" id="normal">
-						<div id="LocaleReq3"
-						data-lang-zh-tw="普通"
-						data-lang-ja="普通"
-						data-lang-en="NORMAL">普通</div>
-					</button>
-                    <button class="ts-button is-large" id="hard">
-						<div id="LocaleReq4"
-						data-lang-zh-tw="困難"
-						data-lang-ja="困難"
-						data-lang-en="HARD">困難</div>
-					</button>
-                </div>
-        </div>
-        <!-- 卡片 -->
-        <div class="div">
-            <section class="memory-game-normal" id="difficulty" >
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/001.gif" alt="card01" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/001.gif" alt="card01" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/002.gif" alt="card02" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/002.gif" alt="card02" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/003.gif" alt="card03" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/003.gif" alt="card03" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/004.gif" alt="card04" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/004.gif" alt="card04" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/005.gif" alt="card05" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>  
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/005.gif" alt="card05" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/006.gif" alt="card06" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/006.gif" alt="card06" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/007.gif" alt="card07" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/007.gif" alt="card07" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/008.gif" alt="card08" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/008.gif" alt="card08" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/009.gif" alt="card09" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/009.gif" alt="card09" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/010.gif" alt="card10" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/010.gif" alt="card10" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/011.gif" alt="card11" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/011.gif" alt="card11" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/012.gif" alt="card12" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/012.gif" alt="card12" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/013.gif" alt="card13" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/013.gif" alt="card13" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/014.gif" alt="card14" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/014.gif" alt="card14" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/015.gif" alt="card15" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/015.gif" alt="card15" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/016.gif" alt="card16" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/016.gif" alt="card16" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/017.gif" alt="card17" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/017.gif" alt="card17" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/018.gif" alt="card18" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/018.gif" alt="card18" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/019.gif" alt="card19" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/019.gif" alt="card19" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/020.gif" alt="card20" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <div class="none">
-                    <div class="memory-card" >
-                        <img class="front-face" src="img/020.gif" alt="card20" />
-                        <img class="back-face" src="img/card.png" alt="Memory Card" />
-                    </div>
-                </div>
-                <a class="text" id="end">
-					<div id="LocaleReq5"
-					data-lang-zh-tw="選擇難度"
-					data-lang-ja="難易度選択"
-					data-lang-en="Difficulty Select">選擇難度</div>
-				</a>
-            </section>
-        </div>
-        <!-- 重置和偷看 -->
-        <div class="none" id="reset_look">
-            <div class="ts-wrap" style="font-family: Pixel;">
-                <button class="ts-button is-large" id="reset">
-					<div id="LocaleReq6"
-					data-lang-zh-tw="重置"
-					data-lang-ja="リセット"
-					data-lang-en="Reset">重置</div>
-				</button>
-                <div>
-                <button class="ts-button is-large" id="look">
-					<div id="LocaleReq7"
-					data-lang-zh-tw="偷看"
-					data-lang-ja="覗う"
-					data-lang-en="Peep">偷看</div>
-				</button>
+    </div>
+    <!-- 卡片 -->
+    <div class="div">
+        <section class="memory-game-normal" id="difficulty">
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/001.gif" alt="card01" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
                 </div>
             </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/001.gif" alt="card01" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/002.gif" alt="card02" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/002.gif" alt="card02" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/003.gif" alt="card03" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/003.gif" alt="card03" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/004.gif" alt="card04" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/004.gif" alt="card04" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/005.gif" alt="card05" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/005.gif" alt="card05" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/006.gif" alt="card06" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/006.gif" alt="card06" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/007.gif" alt="card07" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/007.gif" alt="card07" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/008.gif" alt="card08" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/008.gif" alt="card08" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/009.gif" alt="card09" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/009.gif" alt="card09" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/010.gif" alt="card10" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/010.gif" alt="card10" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/011.gif" alt="card11" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/011.gif" alt="card11" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/012.gif" alt="card12" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/012.gif" alt="card12" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/013.gif" alt="card13" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/013.gif" alt="card13" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/014.gif" alt="card14" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/014.gif" alt="card14" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/015.gif" alt="card15" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/015.gif" alt="card15" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/016.gif" alt="card16" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/016.gif" alt="card16" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/017.gif" alt="card17" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/017.gif" alt="card17" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/018.gif" alt="card18" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/018.gif" alt="card18" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/019.gif" alt="card19" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/019.gif" alt="card19" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/020.gif" alt="card20" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <div class="none">
+                <div class="memory-card">
+                    <img class="front-face" src="img/020.gif" alt="card20" />
+                    <img class="back-face" src="img/card.png" alt="Memory Card" />
+                </div>
+            </div>
+            <a class="text" id="end">
+                <div id="LocaleReq5" data-lang-zh-tw="選擇難度" data-lang-ja="難易度選択" data-lang-en="Difficulty Select">選擇難度
+                </div>
+            </a>
+        </section>
+    </div>
+    <!-- 重置和偷看 -->
+    <div class="none" id="reset_look">
+        <div class="ts-wrap" style="font-family: Pixel;">
+            <button class="ts-button is-large" id="reset">
+                <div id="LocaleReq6" data-lang-zh-tw="重置" data-lang-ja="リセット" data-lang-en="Reset">重置</div>
+            </button>
+            <div>
+                <button class="ts-button is-large" id="look">
+                    <div id="LocaleReq7" data-lang-zh-tw="偷看" data-lang-ja="覗う" data-lang-en="Peep">偷看</div>
+                </button>
+            </div>
         </div>
-        <!-- 引入語系切換核心 -->
-		<script src="./assets/locale.js"></script>
-        <br>
-		<div class="ts-wrap is-center-aligned" style="font-family: Pixel;">
-			<button class="ts-button is-large" onclick="English_Locale();">English</button>
-			<button class="ts-button is-large" onclick="Chinese_Locale();">正體中文(臺灣)</button>
-			<button class="ts-button is-large" onclick="Japanese_Locale();">日本語</button>
-        </div>
-        <!-- 引入遊戲本體 JavaScript -->
-        <script src="asstes/script.js"></script>
-    </body>
+    </div>
+    <!-- 引入語系切換核心 -->
+    <script src="./assets/locale.js"></script>
+    <br>
+    <div class="ts-wrap is-center-aligned" style="font-family: Pixel;">
+        <button class="ts-button is-large" onclick="English_Locale();">English</button>
+        <button class="ts-button is-large" onclick="Chinese_Locale();">正體中文(臺灣)</button>
+        <button class="ts-button is-large" onclick="Japanese_Locale();">日本語</button>
+    </div>
+    <!-- 引入遊戲本體 JavaScript -->
+    <script src="asstes/script.js"></script>
+</body>
+
 </html>
